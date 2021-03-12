@@ -1,3 +1,4 @@
+'use strict'
 const log4jsConfig = {
     appenders: {
         stdout: { type: 'stdout' },
@@ -13,8 +14,8 @@ const log4jsConfig = {
     categories: { default: { appenders: ["stdout", "noodle"], level: "info" } }
 };
 const config = {
-    clientId: '',
-    key: ''
+    clientId: 'bStable.finance',
+    key: '891ab92b-6210-4411-a0c9-96168f5ea439'
 };
 
-export { log4jsConfig, config };
+module.exports = { log4jsConfig: log4jsConfig, default: config };

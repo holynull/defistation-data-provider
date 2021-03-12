@@ -1,12 +1,13 @@
-import { Contract, ethers } from "ethers";
-import BStablePool from './abi/BStablePool.json';
-import BEP20 from './abi/BEP20.json';
-import BigNumber from 'bignumber.js';
-import https from 'https';
-import log4js from 'log4js';
-import { log4jsConfig, config } from './conf/conf.js.sample';
+"use strict"
+const ethers = require("ethers");
+const BStablePool = require('./abi/BStablePool.json');
+const BEP20 = require('./abi/BEP20.json');
+const BigNumber = require('bignumber.js');
+const https = require('https');
+const log4js = require('log4js');
+const config = require('./conf/conf.js');
 
-log4js.configure(log4jsConfig);
+log4js.configure(config.log4jsConfig);
 const logger = log4js.getLogger('Defistation\'s Data Provider');
 logger.info('Defistation\'s Data Provider start.');
 
@@ -85,8 +86,8 @@ Promise.all(arrP).then(res => {
         },
         "test": false
     };
-    let clientId = config.clientId;
-    let clientSecret = config.key;
+    let clientId = config.default.clientId;
+    let clientSecret = config.default.key;
     let auth = 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64');
     let bodyStr = JSON.stringify(body);
     let headers = {
