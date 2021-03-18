@@ -54,8 +54,8 @@ Promise.all(arrP).then(res => {
 
     let body = {
         "tvl": tvl.toFixed(4, BigNumber.ROUND_HALF_UP),
-        "volume": 0,
-        "bnb": 0,
+        "volume": "0",
+        "bnb": "0",
         "data": {
             "pairEntities": [
                 {
@@ -90,6 +90,7 @@ Promise.all(arrP).then(res => {
     let clientSecret = config.default.key;
     let auth = 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64');
     let bodyStr = JSON.stringify(body);
+    logger.info(bodyStr);
     let headers = {
         // 'Host': 'www.example.com',
         'Authorization': auth,
