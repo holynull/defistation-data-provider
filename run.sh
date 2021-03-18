@@ -1,3 +1,3 @@
 cd /home/centos/defistation-data-provider
-./bin/linux_x86/node dist/index.js
+./bin/linux_x86/node index.js
 
