@@ -1,2 +1,3 @@
-node /home/centos/defistation-data-provider/index.js
+#!/bin/bash
 
+node /home/centos/defistation-data-provider/index.js
