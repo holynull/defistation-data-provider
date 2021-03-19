@@ -53,9 +53,9 @@ Promise.all(arrP).then(res => {
     logger.info('Total value locked: ' + tvl.toFormat(18, BigNumber.ROUND_DOWN));
 
     let body = {
-        "tvl": tvl.toFixed(4, BigNumber.ROUND_HALF_UP),
-        "volume": "0",
-        "bnb": "0",
+        "tvl": Number(tvl.toFixed(4, BigNumber.ROUND_HALF_UP)),
+        "volume": 0,
+        "bnb": 0,
         "data": {
             "pairEntities": [
                 {

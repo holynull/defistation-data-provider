@@ -1,2 +1,2 @@
-node index.js
+node /home/centos/defistation-data-provider/index.js
 
